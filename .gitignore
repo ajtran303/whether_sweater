@@ -24,3 +24,6 @@
 
 # Ignore testing coverage
 /coverage
+
+# Ignore sandbox
+/sandbox
