@@ -4,7 +4,7 @@ class ForecastSerializer
       { type:'forecast',
         id: nil,
         attributes: {
-          location: nil,
+          location: forecast_params.location,
           current_weather: nil,
           forecast: {
             eight_hour: nil,
