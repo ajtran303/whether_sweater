@@ -32,7 +32,7 @@ RSpec.describe 'Forecast Endpoint' do
 
     detail = 'This API conforms to the JSON API Spec. ' +
              'Requests must have the header ' +
-             '`Content-Type: application/vnd.api+json`.' +
+             '`Content-Type: application/vnd.api+json`.'
     expect(error[:errors][0][:detail]).to eq(detail)
   end
 end
