@@ -22,7 +22,7 @@ class ClimbingRoutesSerializer
         name: route[:name],
         type: route[:type],
         rating: route[:rating],
-        location: route[:location]
+        location: route[:location],
         distance_to_route: route[:distance_to_route]
       }
     end
