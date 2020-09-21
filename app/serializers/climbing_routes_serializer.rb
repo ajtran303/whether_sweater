@@ -16,7 +16,7 @@ class ClimbingRoutesSerializer
     }
   end
 
-  def climbing_route_details
+  def self.climbing_route_details
     proc do |route|
       {
         name: route[:name],
