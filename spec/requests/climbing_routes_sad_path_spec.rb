@@ -23,7 +23,7 @@ RSpec.describe 'Sad Path for GET /climbing_routes' do
     expect(error).to have_key :errors
 
     expect(error[:errors][0][:status]).to eq('415')
-    expect(error[:errors][0][:source]).to eq({ pointer: '/api/v1/forecast' })
+    expect(error[:errors][0][:source]).to eq({ pointer: '/api/v1/climbing_routes' })
     expect(error[:errors][0][:title]).to eq('Unsupported Media Type')
 
     detail = 'This API conforms to the JSON API Spec. ' +
