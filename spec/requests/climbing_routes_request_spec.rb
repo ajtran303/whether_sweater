@@ -25,7 +25,7 @@ RSpec.describe 'GET /climbing_routes' do
 
     expect(climbing_route[:data][:id]).to be_nil
     expect(climbing_route[:data][:type]).to eq 'climbing route'
-    expect(climbing_route[:data][:attributes]).to be
+    expect(climbing_route[:data][:attributes]).to be_a Hash
 
     expect(climbing_route[:data][:attributes]).to have_key :location
     expect(climbing_route[:data][:attributes]).to have_key :forecast
