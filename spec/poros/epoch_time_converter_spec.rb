@@ -41,8 +41,7 @@ RSpec.describe 'Epoch Time Converter' do
     end
 
     it 'has attributes' do
-      expect(@date_time.epoch_time).to eq @epoch_time
-      expect(@date_time.offset).to eq @offset
+      expect(@date_time.local_epoch_time).to eq @epoch_time + @offset
     end
 
     it 'can tell date and time' do
@@ -55,23 +54,13 @@ RSpec.describe 'Epoch Time Converter' do
     end
 
     it 'can tell another date and time' do
-      another_date_time = EpochTimeConverter.new(1584723886, @offset)
-      expect(another_date_time.month).to eq 'March'
-      expect(another_date_time.day_of_week).to eq 'Friday'
-      expect(another_date_time.day_of_month).to eq '20'
-      expect(another_date_time.hour).to eq '5'
-      expect(another_date_time.minute).to eq '04'
-      expect(another_date_time.meridiem).to eq 'PM'
-    end
-
-    it 'can tell yet another date and time' do
-      yet_another_date_time = EpochTimeConverter.new(1600664686, @offset)
-      expect(yet_another_date_time.month).to eq 'September'
-      expect(yet_another_date_time.day_of_week).to eq 'Monday'
-      expect(yet_another_date_time.day_of_month).to eq '21'
-      expect(yet_another_date_time.hour).to eq '5'
-      expect(yet_another_date_time.minute).to eq '04'
-      expect(yet_another_date_time.meridiem).to eq 'AM'
+      another_date_time = EpochTimeConverter.new(1600668864, @offset)
+      expect(another_date_time.month).to eq 'September'
+      expect(another_date_time.day_of_week).to eq 'Monday'
+      expect(another_date_time.day_of_month).to eq '21'
+      expect(another_date_time.hour).to eq '12'
+      expect(another_date_time.minute).to eq '14'
+      expect(another_date_time.meridiem).to eq 'AM'
     end
   end
 end
