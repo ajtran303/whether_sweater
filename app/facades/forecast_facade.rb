@@ -34,7 +34,7 @@ class ForecastFacade
 
   def eight_hour
     forecast[:hourly][1..8].map do |hourly_forecast|
-      time = EpochTimeConverter.new(hourly_forecast[:dt], offset)
+      time = EpochTimeConverter.new hourly_forecast[:dt], offset
       {
         hour: "#{time.hour} #{time.meridiem}",
         condition: hourly_forecast[:weather][0][:main],
@@ -69,7 +69,7 @@ class ForecastFacade
 
   def sunset
     sunset = EpochTimeConverter.new forecast[:current][:sunset], offset
-    "#{sunset.hour}:#{sunset.minute} #{sunset.meridiem}"
+    "#{sunset.hour.to_i - 12}:#{sunset.minute} #{sunset.meridiem}"
   end
 
   def geocoding

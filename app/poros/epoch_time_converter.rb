@@ -40,7 +40,7 @@ class EpochTimeConverter
     @month = self.class.month date_time.month
     @day_of_week = self.class.day date_time.cwday
     @day_of_month = date_time.day.to_s
-    @hour = date_time.hour == 12 ? 12 : (date_time.hour - 12).abs.to_s
+    @hour = date_time.hour.to_s
     @minute = date_time.minute.zero? ? '00' : date_time.minute.to_s
     @meridiem = date_time.hour >= 12 ? 'PM' : 'AM'
     @year = date_time.year.to_s
