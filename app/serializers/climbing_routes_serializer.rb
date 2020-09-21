@@ -5,10 +5,10 @@ class ClimbingRoutesSerializer
         id: nil,
         type: 'climbing route',
         attributes: {
-          location: climb_routes.location,
+          location: climbing_routes.location,
           forecast: {
-            summary: climb_routes.forecast.summary,
-            temperature: climb_routes.forecast.temperature
+            summary: climbing_routes.forecast.summary,
+            temperature: climbing_routes.forecast.temperature
           },
           routes: climbing_routes.routes.map(&climbing_route_details)
         }
