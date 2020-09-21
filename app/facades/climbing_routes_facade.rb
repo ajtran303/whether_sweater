@@ -22,8 +22,8 @@ class ClimbingRoutesFacade
     climbing_routes = MountainProjectService.find_routes(start_params)
     climbing_routes.map do |route|
 
-      destination_params = { latitude: route[:longitude],
-                             longitude: route[:latitude] }
+      destination_params = { latitude: route[:latitude],
+                             longitude: route[:longitude] }
 
          distance_params = { start: start_params,
                              destination: destination_params }
