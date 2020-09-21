@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Forecast response has current weather data' do
+RSpec.describe 'Forecast response has eight hour data' do
   it 'exists' do
     forecast_params = {
       'location' => 'denver,co'
