@@ -4,4 +4,8 @@ class ApplicationController < ActionController::API
   def set_json_api_content_headers
     response.headers['Content-Type'] = 'application/vnd.api+json'
   end
+
+  def request_media_type_valid?
+    request.media_type == 'application/vnd.api+json'
+  end
 end

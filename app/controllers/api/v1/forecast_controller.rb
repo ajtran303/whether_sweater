@@ -8,10 +8,4 @@ class Api::V1::ForecastController < ApplicationController
       render json: {errors: [error]}, status: 415
     end
   end
-
-  private
-
-  def request_media_type_valid?
-    request.media_type == 'application/vnd.api+json'
-  end
 end
