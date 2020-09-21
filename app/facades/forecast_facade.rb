@@ -43,6 +43,19 @@ class ForecastFacade
     end
   end
 
+  def five_day
+    forecast[:daily][1..5].map do |daily_forecast|
+      date = EpochTimeConverter.new daily_forecast[:dt], offset
+      {
+        day_of_week: date.day_of_week,
+        condition: daily_forecast[:weather][0][:main],
+        precipitation: "#{daily_forecast[:rain] || '0'} mm",
+        high: daily_forecast[:temp][:max],
+        low: daily_forecast[:temp][:max]
+      }
+    end
+  end
+
   private
 
   def offset
