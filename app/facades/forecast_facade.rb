@@ -3,6 +3,10 @@ class ForecastFacade
     @location_params = params[:location]
   end
 
+  def date_time
+    EpochTimeConverter.date_time forecast[:current][:dt], forecast[:timezone_offset]
+  end
+
   def location
     @location ||= {
       city: geocoding[:results][0][:locations][0][:adminArea5],
@@ -28,6 +32,10 @@ class ForecastFacade
     }
   end
 
+  def eight_hour
+    # binding.pry
+  end
+
   private
 
   def sunrise
@@ -38,10 +46,6 @@ class ForecastFacade
   def sunset
     sunset = EpochTimeConverter.new forecast[:current][:sunset], forecast[:timezone_offset]
     "#{sunset.hour}:#{sunset.minute} #{sunset.meridiem}"
-  end
-
-  def date_time
-    EpochTimeConverter.date_time forecast[:current][:dt], forecast[:timezone_offset]
   end
 
   def geocoding

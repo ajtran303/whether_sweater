@@ -8,7 +8,7 @@ class ForecastSerializer
           location: forecast.location,
           current_weather: forecast.current_weather,
           forecast: {
-            eight_hour: nil,
+            eight_hour: forecast.eight_hour,
             five_day: nil
           }
         }
