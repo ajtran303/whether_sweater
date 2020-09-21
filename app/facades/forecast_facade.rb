@@ -1,7 +1,6 @@
-class ForecastFacade < Facade
-  attr_reader :location
-  def initialize location
-    @location = location
+class ForecastFacade
+  def initialize params
+    @location_params = params[:location]
   end
 
   def date_time
@@ -74,10 +73,14 @@ class ForecastFacade < Facade
   end
 
   def geocoding
-    @geocoding ||= parse_body MapQuestService.locate @location
+    @geocoding ||= parse_body MapQuestService.locate @location_params
   end
 
   def forecast
     @forecast ||= parse_body OpenWeatherService.get_forecast location[:latitude], location[:longitude]
+  end
+
+  def parse_body json
+    JSON.parse json.body, symbolize_names: true
   end
 end
