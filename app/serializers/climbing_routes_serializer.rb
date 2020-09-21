@@ -10,17 +10,21 @@ class ClimbingRoutesSerializer
             summary: nil,
             temperature: nil
           },
-          routes: [
-            {
-              name: nil,
-              type: nil,
-              rating: nil,
-              location: nil,
-              distance_to_route: nil
-            }
-          ]
+          routes: climbing_routes.routes.map(&climbing_route_details)
         }
       }
     }
+  end
+
+  def climbing_route_details
+    proc do |route|
+      {
+        name: route.name,
+        type: route.type,
+        rating: route.rating,
+        location: route.location,
+        distance_to_route: route.distance_to_route
+      }
+    end
   end
 end
