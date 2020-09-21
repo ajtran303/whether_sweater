@@ -5,12 +5,13 @@ class ApplicationController < ActionController::API
     response.headers['Content-Type'] = 'application/vnd.api+json'
   end
 
-  def request_media_type_valid?
-    request.media_type == 'application/vnd.api+json'
+  def request_headers_valid?
+    request.media_type == 'application/vnd.api+json' &&
+    request.accepts[0].to_s == 'application/vnd.api+json'
   end
 
   def check_media_type
-    unless request_media_type_valid?
+    unless request_headers_valid?
       error = Error.unsupported(request.path)
       render json: {errors: [error]}, status: 415 and return
     end
