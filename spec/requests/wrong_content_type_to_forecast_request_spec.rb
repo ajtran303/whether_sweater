@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Forecast Endpoint' do
-# GET /api/v1/forecast?location=denver,co
-# Content-Type: application/json
-# Accept: application/json
+RSpec.describe 'Wrong Content Type Request to Forecast Endpoint' do
+  # GET /api/v1/forecast?location=denver,co
+  # Content-Type: application/json
+  # Accept: application/json
 
   it 'responds to application/json with an error' do
     forecast_params = {
