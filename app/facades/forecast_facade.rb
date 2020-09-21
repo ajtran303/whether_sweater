@@ -4,7 +4,7 @@ class ForecastFacade
   end
 
   def date_time
-    EpochTimeConverter.date_time forecast[:current][:dt], forecast[:timezone_offset]
+    EpochTimeConverter.date_time forecast[:current][:dt], offset
   end
 
   def location
@@ -33,18 +33,29 @@ class ForecastFacade
   end
 
   def eight_hour
-    # binding.pry
+    forecast[:hourly][1..8].map do |hourly_forecast|
+      time = EpochTimeConverter.new(hourly_forecast[:dt], offset)
+      {
+        hour: "#{time.hour} #{time.meridiem}",
+        condition: hourly_forecast[:weather][0][:main],
+        temperature: hourly_forecast[:temp]
+      }
+    end
   end
 
   private
 
+  def offset
+    forecast[:timezone_offset]
+  end
+
   def sunrise
-    sunrise = EpochTimeConverter.new forecast[:current][:sunrise], forecast[:timezone_offset]
+    sunrise = EpochTimeConverter.new forecast[:current][:sunrise], offset
     "#{sunrise.hour}:#{sunrise.minute} #{sunrise.meridiem}"
   end
 
   def sunset
-    sunset = EpochTimeConverter.new forecast[:current][:sunset], forecast[:timezone_offset]
+    sunset = EpochTimeConverter.new forecast[:current][:sunset], offset
     "#{sunset.hour}:#{sunset.minute} #{sunset.meridiem}"
   end
 
