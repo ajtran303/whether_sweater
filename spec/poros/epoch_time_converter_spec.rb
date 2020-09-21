@@ -3,6 +3,13 @@ require 'rails_helper'
 RSpec.describe 'Epoch Time Converter' do
 
   describe 'Class Methods' do
+    it 'knows the date_time' do
+      epoch_time = 1600641959
+      offset = -21600
+      date_time = EpochTimeConverter.date_time(epoch_time, offset)
+      expect(date_time).to eq 'September 20 2020 4:45 PM Sunday'
+  end
+
     it 'knows names of the months' do
       expect(EpochTimeConverter.month(1)).to eq 'January'
       expect(EpochTimeConverter.month(2)).to eq 'February'
@@ -48,6 +55,7 @@ RSpec.describe 'Epoch Time Converter' do
       expect(@date_time.month).to eq 'September'
       expect(@date_time.day_of_week).to eq 'Sunday'
       expect(@date_time.day_of_month).to eq '20'
+      expect(@date_time.year).to eq '2020'
       expect(@date_time.hour).to eq '4'
       expect(@date_time.minute).to eq '45'
       expect(@date_time.meridiem).to eq 'PM'
@@ -58,6 +66,7 @@ RSpec.describe 'Epoch Time Converter' do
       expect(another_date_time.month).to eq 'September'
       expect(another_date_time.day_of_week).to eq 'Monday'
       expect(another_date_time.day_of_month).to eq '21'
+      expect(another_date_time.year).to eq '2020'
       expect(another_date_time.hour).to eq '12'
       expect(another_date_time.minute).to eq '14'
       expect(another_date_time.meridiem).to eq 'AM'

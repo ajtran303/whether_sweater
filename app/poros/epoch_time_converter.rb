@@ -1,4 +1,13 @@
 class EpochTimeConverter
+  def self.date_time(seconds_since_epoch, offset_seconds)
+    date_time = new(seconds_since_epoch, offset_seconds)
+    "#{date_time.month} " +
+    "#{date_time.day_of_month} " +
+    "#{date_time.year} " +
+    "#{date_time.hour}:#{date_time.minute} #{date_time.meridiem} " +
+    "#{date_time.day_of_week}"
+  end
+
   def self.month(month_number)
     months = {
       1 => 'January', 2 => 'February', 3 => 'March', 4 => 'April',
@@ -17,7 +26,14 @@ class EpochTimeConverter
     days[day_number]
   end
 
-  attr_reader :local_epoch_time, :month, :day_of_week, :day_of_month, :hour, :minute, :meridiem
+  attr_reader :local_epoch_time,
+              :month,
+              :day_of_week,
+              :day_of_month,
+              :hour,
+              :minute,
+              :meridiem,
+              :year
 
   def initialize(epoch_time, offset)
     @local_epoch_time = epoch_time + offset
@@ -27,6 +43,7 @@ class EpochTimeConverter
     @hour = (date_time.hour - 12).abs.to_s
     @minute = date_time.minute.to_s
     @meridiem = date_time.hour >= 12 ? 'PM' : 'AM'
+    @year = date_time.year.to_s
   end
 
   private
