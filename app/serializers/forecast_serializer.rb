@@ -4,6 +4,7 @@ class ForecastSerializer
       { type:'forecast',
         id: nil,
         attributes: {
+          date_time: forecast.date_time,
           location: forecast.location,
           current_weather: forecast.current_weather,
           forecast: {
