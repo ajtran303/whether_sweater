@@ -17,39 +17,21 @@ class EpochTimeConverter
     days[day_number]
   end
 
-  attr_reader :local_epoch_time
+  attr_reader :local_epoch_time, :month, :day_of_week, :day_of_month, :hour, :minute, :meridiem
 
   def initialize(epoch_time, offset)
     @local_epoch_time = epoch_time + offset
-  end
-
-  def month
-    self.class.month date_time.month
-  end
-
-  def day_of_week
-    self.class.day date_time.cwday
-  end
-
-  def day_of_month
-    date_time.day.to_s
-  end
-
-  def hour
-    (date_time.hour - 12).abs.to_s
-  end
-
-  def minute
-    date_time.minute.to_s
-  end
-
-  def meridiem
-    date_time.hour >= 12 ? 'PM' : 'AM'
+    @month = self.class.month date_time.month
+    @day_of_week = self.class.day date_time.cwday
+    @day_of_month = date_time.day.to_s
+    @hour = (date_time.hour - 12).abs.to_s
+    @minute = date_time.minute.to_s
+    @meridiem = date_time.hour >= 12 ? 'PM' : 'AM'
   end
 
   private
 
   def date_time
-    @date_time ||= DateTime.strptime((local_epoch_time ).to_s, '%s')
+    @date_time ||= DateTime.strptime local_epoch_time.to_s, '%s'
   end
 end
