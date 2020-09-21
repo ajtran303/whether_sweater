@@ -21,7 +21,7 @@ RSpec.describe 'Wrong Content Type Request to Forecast Endpoint' do
     expect(response.status).to eq(415)
     expect(response).to_not be_successful
 
-    error = JSON.parse(response.body, symbolize_names: true)
+    error = parse_body(response)
 
     expect(error).to_not have_key :data
     expect(error).to have_key :errors
