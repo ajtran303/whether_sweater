@@ -38,7 +38,8 @@ RSpec.describe 'Forecast Endpoint can respond to correct request type' do
     expect(forecast[:data][:attributes]).to have_key :location
     expect(forecast[:data][:attributes]).to have_key :current_weather
     expect(forecast[:data][:attributes]).to have_key :forecast
-    expect(forecast[:data][:attributes].keys.size).to eq 3
+    expect(forecast[:data][:attributes]).to have_key :date_time
+    expect(forecast[:data][:attributes].keys.size).to eq 4
 
     expect(forecast[:data][:attributes][:forecast]).to have_key :eight_hour
     expect(forecast[:data][:attributes][:forecast]).to have_key :five_day

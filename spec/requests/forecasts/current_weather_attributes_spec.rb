@@ -17,9 +17,8 @@ RSpec.describe 'Forecast response has current weather data' do
     expect(forecast[:data][:attributes]).to have_key :current_weather
 
     current_weather = forecast[:data][:attributes][:current_weather]
-    expect(current_weather.keys.size).to eq 11
+    expect(current_weather.keys.size).to eq 10
 
-    expect(current_weather).to have_key :date_time
     expect(current_weather).to have_key :condition
     expect(current_weather).to have_key :temperature
     expect(current_weather).to have_key :high
