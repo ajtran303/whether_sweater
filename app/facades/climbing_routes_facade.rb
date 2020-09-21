@@ -1,14 +1,14 @@
 class ClimbingRoutesFacade
   attr_reader :location
 
-  def initialize(location)
-    @location = location
+  def initialize(params)
+    @location = params[:location]
   end
 
   def forecast
-    response = ForecastFacade.new location: location
-    # summary =
-    # temperature =
-    # ForecastSummarizer.new(summary, temperature)
+    forecast = ForecastFacade.new location: location
+    summary = forecast.current_weather[:condition]
+    temperature = forecast.current_weather[:temperature]
+    {summary: summary, temperature: temperature}
   end
 end
