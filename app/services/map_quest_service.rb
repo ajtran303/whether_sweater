@@ -1,20 +1,22 @@
-class MapQuestService
-  def self.locate(location_query)
-    conn.get '/geocoding/v1/address' do |request|
+class MapQuestService < ConnectionService
+  def self.locate location_query
+    geocoding = conn.get '/geocoding/v1/address' do |request|
       request.params[:location] = location_query
     end
+    parse_body geocoding
   end
 
-  def self.find_distance_between(coordinates)
+  def self.find_distance_between coordinates
     start_param = "#{coordinates[:start][:latitude]},#{coordinates[:start][:longitude]}"
     destination_param = "#{coordinates[:destination][:latitude]},#{coordinates[:destination][:longitude]}"
-    response = conn.get '/directions/v2/route' do |request|
+    directions = conn.get '/directions/v2/route' do |request|
       request.params[:from] = start_param
       request.params[:to] = destination_param
     end
-    route = JSON.parse response.body, symbolize_names: true
-    route[:route][:distance]
+    parse_body directions [:route][:distance]
   end
+
+  private
 
   def self.conn
     @conn ||= Faraday.new ENV['MAP_QUEST_URL'] do |f|
