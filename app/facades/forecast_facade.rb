@@ -6,9 +6,9 @@ class ForecastFacade
   def location
     response = MapQuestService.locate(@location)
     geocoding = JSON.parse(response.body, symbolize_names: true)
-    city = geocoding[:results][1][:locations][:adminArea5]
-    state = geocoding[:results][1][:locations][:adminArea3]
-    country = geocoding[:results][1][:locations][:adminArea1]
+    city = geocoding[:results][0][:locations][0][:adminArea5]
+    state = geocoding[:results][0][:locations][0][:adminArea3]
+    country = geocoding[:results][0][:locations][0][:adminArea1]
     {city: city, state: state, country: country}
   end
 end
