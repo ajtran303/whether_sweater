@@ -37,13 +37,13 @@ RSpec.describe 'GET /climbing_routes' do
     expect(climbing_route[:data][:attributes][:forecast].keys.size).to eq 2
 
     expect(climbing_route[:data][:attributes][:routes]).to be_a Array
-    expect(climbing_route[:data][:attributes][:routes].first).to be_a Array
+    expect(climbing_route[:data][:attributes][:routes].first).to be_a Hash
 
     expect(climbing_route[:data][:attributes][:routes].first).to have_key :name
     expect(climbing_route[:data][:attributes][:routes].first).to have_key :type
     expect(climbing_route[:data][:attributes][:routes].first).to have_key :rating
     expect(climbing_route[:data][:attributes][:routes].first).to have_key :location
     expect(climbing_route[:data][:attributes][:routes].first).to have_key :distance_to_route
-    expect(climbing_route[:data][:attributes][:routes].keys.size).to eq 5
+    expect(climbing_route[:data][:attributes][:routes].first.keys.size).to eq 5
   end
 end
