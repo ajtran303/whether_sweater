@@ -27,3 +27,6 @@
 
 # Ignore sandbox
 /sandbox
+
+# Ignore application configuration
+/config/application.yml
