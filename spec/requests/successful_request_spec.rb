@@ -26,9 +26,21 @@ RSpec.describe 'Forecast Endpoint can respond to correct request type' do
     expect(forecast).to_not have_key :errors
     expect(forecast).to have_key :data
 
-    expect(forecast[:data].keys.size).to eq 3
     expect(forecast[:data]).to have_key :type
     expect(forecast[:data]).to have_key :id
     expect(forecast[:data]).to have_key :attributes
+    expect(forecast[:data].keys.size).to eq 3
+
+    expect(forecast[:data][:type]).to eq 'forecast'
+    expect(forecast[:data][:id]).to be_nil
+    expect(forecast[:data][:attributes]).to be
+
+    expect(forecast[:data][:attributes]).to have_key :location
+    expect(forecast[:data][:attributes]).to have_key :current_weather
+    expect(forecast[:data][:attributes]).to have_key :forecast
+    expect(forecast[:data][:attributes].keys.size).to eq 3
+
+    expect(forecast[:data][:attributes][:forecast]).to have_key :eight_hour
+    expect(forecast[:data][:attributes][:forecast]).to have_key :five_day
   end
 end
