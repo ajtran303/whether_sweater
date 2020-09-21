@@ -19,11 +19,11 @@ class ClimbingRoutesSerializer
   def climbing_route_details
     proc do |route|
       {
-        name: route.name,
-        type: route.type,
-        rating: route.rating,
-        location: route.location,
-        distance_to_route: route.distance_to_route
+        name: route[:name],
+        type: route[:type],
+        rating: route[:rating],
+        location: route[:location]
+        distance_to_route: route[:distance_to_route]
       }
     end
   end
