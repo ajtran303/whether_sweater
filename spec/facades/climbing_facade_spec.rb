@@ -33,5 +33,29 @@ RSpec.describe ClimbingRoutesFacade do
     end
   end
   describe 'instance methods' do
+    before :each do
+      @facade = ClimbingRoutesFacade.new location: 'denver,co'
+    end
+
+    it 'exists' do
+      expect(@facade).to be_a ClimbingRoutesFacade
+    end
+
+    it 'location' do
+      expect(@facade.location).to eq 'denver,co'
+    end
+
+    it 'forecast' do
+      expect(@facade.forecast).to be_a Hash
+      expect(@facade.forecast.keys.size).to eq 2
+      expect(@facade.forecast.keys).to match_array [:summary, :temperature]
+    end
+
+    it 'routes' do
+      expect(@facade.routes).to be_a Array
+      expect(@facade.routes.size).to eq 3
+      expect(@facade.routes.first).to be_a Hash
+      expect(@facade.routes.first.keys).to match_array [:name, :type, :location, :rating, :distance_to_route]
+    end
   end
 end
