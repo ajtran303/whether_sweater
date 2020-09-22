@@ -7,8 +7,8 @@ RSpec.describe 'GET /climbing_routes' do
     }
 
     headers = {
-      'CONTENT_TYPE' => 'application/vnd.api+json',
-      'ACCEPT' => 'application/vnd.api+json'
+      'CONTENT_TYPE' => 'application/json',
+      'ACCEPT' => 'application/json'
     }
 
     get '/api/v1/climbing_routes', headers: headers, params: route_params

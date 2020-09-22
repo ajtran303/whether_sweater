@@ -11,22 +11,10 @@ class ClimbingRoutesFacade
             summary: climbing_routes.forecast[:summary],
             temperature: climbing_routes.forecast[:temperature]
           },
-          routes: climbing_routes.routes.map(&climbing_route_details)
+          routes: climbing_routes.routes
         }
       }
     }
-  end
-
-  def self.climbing_route_details
-    proc do |route|
-      {
-        name: route[:name],
-        type: route[:type],
-        rating: route[:rating],
-        location: route[:location],
-        distance_to_route: route[:distance_to_route]
-      }
-    end
   end
 
   attr_reader :location
