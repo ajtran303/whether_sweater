@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ForecastFacade do
   describe 'class methods' do
-    it 'build_facade' do
+    it 'build_facade', :vcr do
       facade = ForecastFacade.build_facade location: 'denver,co'
 
       expect(facade).to be_a Hash
@@ -38,43 +38,40 @@ RSpec.describe ForecastFacade do
     end
 
   end
-  describe 'instance methods' do
-    before :each do
-      @forecast = ForecastFacade.new location: 'denver,co'
-    end
-    it 'exists' do
-      expect(@forecast).to be_a ForecastFacade
-    end
-    it 'date_time' do
-      expect(@forecast.date_time).to be_a String
-    end
-    it 'location' do
-      expect(@forecast.location).to be_a Hash
-      expect(@forecast.location.keys.size).to eq 5
-      location = [:city, :state, :country, :latitude, :longitude]
-      expect(@forecast.location.keys).to match_array location
-    end
-    it 'current_weather' do
-      expect(@forecast.current_weather).to be_a Hash
-      expect(@forecast.current_weather.keys.size).to eq 10
-      current_weather = [:condition, :temperature, :high, :low, :feels_like, :humidity, :visibility, :uv_index, :sunrise, :sunset]
-      expect(@forecast.current_weather.keys).to match_array current_weather
-    end
-    it 'eight_hour' do
-      expect(@forecast.eight_hour).to be_a Array
-      expect(@forecast.eight_hour.size).to eq 8
-      hour = @forecast.eight_hour.first
-      expect(hour).to be_a Hash
-      expect(hour.keys.size).to eq 3
-      expect(hour.keys).to match_array [:hour, :condition, :temperature]
-    end
-    it 'five_day' do
-      expect(@forecast.five_day).to be_a Array
-      expect(@forecast.five_day.size).to eq 5
-      day = @forecast.five_day.first
-      expect(day).to be_a Hash
-      expect(day.keys.size).to eq 5
-      expect(day.keys).to match_array [:day_of_week, :condition, :precipitation, :high, :low]
-    end
+  it 'instance methods', :vcr do
+    forecast = ForecastFacade.new location: 'denver,co'
+    # it 'exists' do
+    expect(forecast).to be_a ForecastFacade
+
+    # it 'date_time' do
+    expect(forecast.date_time).to be_a String
+
+    # it 'location' do
+    expect(forecast.location).to be_a Hash
+    expect(forecast.location.keys.size).to eq 5
+    location = [:city, :state, :country, :latitude, :longitude]
+    expect(forecast.location.keys).to match_array location
+
+    # it 'current_weather' do
+    expect(forecast.current_weather).to be_a Hash
+    expect(forecast.current_weather.keys.size).to eq 10
+    current_weather = [:condition, :temperature, :high, :low, :feels_like, :humidity, :visibility, :uv_index, :sunrise, :sunset]
+    expect(forecast.current_weather.keys).to match_array current_weather
+
+    # it 'eight_hour' do
+    expect(forecast.eight_hour).to be_a Array
+    expect(forecast.eight_hour.size).to eq 8
+    hour = forecast.eight_hour.first
+    expect(hour).to be_a Hash
+    expect(hour.keys.size).to eq 3
+    expect(hour.keys).to match_array [:hour, :condition, :temperature]
+
+    # it 'five_day' do
+    expect(forecast.five_day).to be_a Array
+    expect(forecast.five_day.size).to eq 5
+    day = forecast.five_day.first
+    expect(day).to be_a Hash
+    expect(day.keys.size).to eq 5
+    expect(day.keys).to match_array [:day_of_week, :condition, :precipitation, :high, :low]
   end
 end
