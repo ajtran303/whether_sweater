@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MapQuestService do
   it 'can locate' do
-    json = MapQuestService.locate('denver,co')
-    location = JSON.parse json.body, symbolize_names: true
+    location = MapQuestService.locate('denver,co')
 
     expect(location).to be_a Hash
     expect(location.keys.size).to eq 3

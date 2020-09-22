@@ -1,8 +1,9 @@
 class MapQuestService
   def self.locate(location_query)
-    conn.get '/geocoding/v1/address' do |request|
+    location = conn.get '/geocoding/v1/address' do |request|
       request.params[:location] = location_query
     end
+    JSON.parse location.body, symbolize_names: true
   end
 
   def self.find_distance_between(coordinates)

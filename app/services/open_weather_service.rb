@@ -1,11 +1,12 @@
 class OpenWeatherService
   def self.get_forecast(latitude, longitude)
-    conn.get '/data/2.5/onecall' do |request|
+    forecast = conn.get '/data/2.5/onecall' do |request|
       request.params[:units] = 'imperial'
       request.params[:exclude] = 'minutely'
       request.params[:lat] = latitude
       request.params[:lon] = longitude
     end
+    JSON.parse forecast.body, symbolize_names: true
   end
 
   def self.conn

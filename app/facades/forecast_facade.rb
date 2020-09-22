@@ -92,14 +92,10 @@ class ForecastFacade
   end
 
   def geocoding
-    @geocoding ||= parse_body MapQuestService.locate @location_params
+    @geocoding ||= MapQuestService.locate @location_params
   end
 
   def forecast
-    @forecast ||= parse_body OpenWeatherService.get_forecast location[:latitude], location[:longitude]
-  end
-
-  def parse_body json
-    JSON.parse json.body, symbolize_names: true
+    @forecast ||= OpenWeatherService.get_forecast location[:latitude], location[:longitude]
   end
 end
