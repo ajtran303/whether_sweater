@@ -17,7 +17,6 @@ class ForecastFacade
     }
   end
 
-
   def initialize params
     @location_params = params[:location]
   end
