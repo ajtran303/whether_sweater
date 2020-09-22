@@ -1,4 +1,23 @@
 class ForecastFacade
+  def self.build_facade params
+    forecast = new location: params[:location]
+    { data:
+      { type:'forecast',
+        id: nil,
+        attributes: {
+          date_time: forecast.date_time,
+          location: forecast.location,
+          current_weather: forecast.current_weather,
+          forecast: {
+            eight_hour: forecast.eight_hour,
+            five_day: forecast.five_day
+          }
+        }
+      }
+    }
+  end
+
+
   def initialize params
     @location_params = params[:location]
   end
