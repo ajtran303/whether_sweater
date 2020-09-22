@@ -11,13 +11,13 @@ RSpec.describe 'Forecast Endpoint can respond to correct request type' do
     }
 
     headers = {
-      'CONTENT_TYPE' => 'application/vnd.api+json',
-      'ACCEPT' => 'application/vnd.api+json'
+      'CONTENT_TYPE' => 'application/json',
+      'ACCEPT' => 'application/json'
     }
 
     get '/api/v1/forecast', headers: headers, params: forecast_params
 
-    expect(response.media_type).to eq('application/vnd.api+json')
+    expect(response.media_type).to eq('application/json')
     expect(response.status).to eq(200)
     expect(response).to be_successful
 

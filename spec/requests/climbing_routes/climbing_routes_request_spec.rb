@@ -12,7 +12,7 @@ RSpec.describe 'GET /climbing_routes' do
     }
 
     get '/api/v1/climbing_routes', headers: headers, params: route_params
-    expect(response.media_type).to eq('application/vnd.api+json')
+    expect(response.media_type).to eq('application/json')
     expect(response.status).to eq(200)
     expect(response).to be_successful
 

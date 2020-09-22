@@ -7,8 +7,8 @@ RSpec.describe 'Forecast response has eight hour data' do
     }
 
     headers = {
-      'CONTENT_TYPE' => 'application/vnd.api+json',
-      'ACCEPT' => 'application/vnd.api+json'
+      'CONTENT_TYPE' => 'application/json',
+      'ACCEPT' => 'application/json'
     }
 
     get '/api/v1/forecast', headers: headers, params: forecast_params
