@@ -2,44 +2,42 @@ require 'rails_helper'
 
 RSpec.describe 'Background Endpoint can respond to correct request type' do
   it 'responds to application/json with a success' do
-    VCR.use_cassette 'success' do
-      params = {
-        'location' => 'denver,co'
-      }
+    params = {
+      'location' => 'denver,co'
+    }
 
-      headers = {
-        'CONTENT_TYPE' => 'application/json',
-        'ACCEPT' => 'application/json'
-      }
+    headers = {
+      'CONTENT_TYPE' => 'application/json',
+      'ACCEPT' => 'application/json'
+    }
 
-      get '/api/v1/backgrounds', headers: headers, params: params
+    get '/api/v1/backgrounds', headers: headers, params: params
 
-      expect(response.media_type).to eq('application/json')
-      expect(response.status).to eq(200)
-      expect(response).to be_successful
+    expect(response.media_type).to eq('application/json')
+    expect(response.status).to eq(200)
+    expect(response).to be_successful
 
-      background = parse_body(response)
+    background = parse_body(response)
 
-      expect(background).to_not have_key :errors
-      expect(background).to have_key :data
+    expect(background).to_not have_key :errors
+    expect(background).to have_key :data
 
-      top_level = [:type, :id, :attributes]
-      expect(background[:data].keys).to match_array top_level
-      expect(background[:data][:type]).to eq 'image'
-      expect(background[:data][:id]).to be_nil
-      expect(background[:data][:attributes]).to be_a Hash
+    top_level = [:type, :id, :attributes]
+    expect(background[:data].keys).to match_array top_level
+    expect(background[:data][:type]).to eq 'image'
+    expect(background[:data][:id]).to be_nil
+    expect(background[:data][:attributes]).to be_a Hash
 
-      attributes = [:keyword_search, :image_url, :credit]
-      expect(background[:data][:attributes].keys).to match_array attributes
-      expect(background[:data][:attributes][:keyword_search]).to be_a String
-      expect(background[:data][:attributes][:image_url]).to be_a String
-      expect(background[:data][:attributes][:credit]).to be_a Hash
+    attributes = [:keyword_search, :image_url, :credit]
+    expect(background[:data][:attributes].keys).to match_array attributes
+    expect(background[:data][:attributes][:keyword_search]).to be_a String
+    expect(background[:data][:attributes][:image_url]).to be_a String
+    expect(background[:data][:attributes][:credit]).to be_a Hash
 
-      credits = [:source, :author, :logo]
-      expect(background[:data][:attributes][:credit].keys).to match_array credits
-      expect(background[:data][:attributes][:credit][:source]).to be_a String
-      expect(background[:data][:attributes][:credit][:author]).to be_a String
-      expect(background[:data][:attributes][:credit][:logo]).to be_a String
-    end
+    credits = [:source, :author, :logo]
+    expect(background[:data][:attributes][:credit].keys).to match_array credits
+    expect(background[:data][:attributes][:credit][:source]).to be_a String
+    expect(background[:data][:attributes][:credit][:author]).to be_a String
+    expect(background[:data][:attributes][:credit][:logo]).to be_a String
   end
 end
