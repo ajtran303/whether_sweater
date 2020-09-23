@@ -11,6 +11,15 @@ RSpec.describe OpenWeatherService do
 
       expect(forecast).to be_a Hash
       expect(forecast.keys).to match_array forecast_keys
+      expect(forecast[:lat]).to be_a Numeric
+      expect(forecast[:lon]).to be_a Numeric
+      expect(forecast[:timezone]).to be_a String
+      expect(forecast[:timezone_offset]).to be_a Numeric
+      expect(forecast[:current]).to be_a Hash
+      expect(forecast[:hourly]).to be_a Array
+      expect(forecast[:hourly].first).to be_a Hash
+      expect(forecast[:daily]).to be_a Array
+      expect(forecast[:daily].first).to be_a Hash
     end
   end
 end
