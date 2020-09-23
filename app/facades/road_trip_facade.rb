@@ -19,17 +19,20 @@ class RoadTripFacade
     @destination = params[:destination]
   end
 
+  def hour
+    (travel_time[:seconds] / 60 / 60.0).ceil - 1
+  end
+
   def arrival_forecast
-    hour = (travel_time[:seconds] / 60 / 60.0).ceil - 1
     if hour > 7
-      { temperature: 'Forecasts not available', condition: 'for 8+ hour trips' }
-    elsif travel_time[:seconds].zero?
-      { temperature: 'Forecasts not available', condition: 'for short trips' }
+      { temperature: destination_forecast.eight_hour.last[:temperature].to_s,
+        condition: destination_forecast.eight_hour.last[:condition] }
+    elsif hour.negative?
+      { temperature: destination_forecast.eight_hour.first[:temperature].to_s,
+        condition: destination_forecast.eight_hour.first[:condition] }
     else
-      {
-        temperature: destination_forecast.eight_hour[hour][:temperature].to_s,
-        condition: destination_forecast.eight_hour[hour][:condition]
-      }
+      { temperature: destination_forecast.eight_hour[hour][:temperature].to_s,
+        condition: destination_forecast.eight_hour[hour][:condition] }
     end
   end
 
