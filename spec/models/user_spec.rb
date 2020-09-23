@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'api_key generation on create' do
-    user = User.create!(email: 'my@email.com', password: 'password', password_confirmation: 'password')
+    user = create :user
     expect(user.api_key).to_not be_nil
     expect(user.api_key).to be_a String
   end
