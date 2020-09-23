@@ -15,21 +15,21 @@ RSpec.describe MapQuestService do
     end
   end
 
-  it 'can get distance between coordinates' do
-    VCR.use_cassette 'can get distance between coordinates' do
-      coordinates =     { :start=> {:latitude=>36.147506, :longitude=>-82.413996},
-                    :destination=> {:latitude=>35.8536,   :longitude=>-82.2401} }
-      distance = MapQuestService.find_distance_between(coordinates)
-      expect(distance).to eq 61.615
+  it 'can get travel time between coordinates' do
+    VCR.use_cassette 'travel time between coordinates' do
+      coordinates =     { :start=> "36.147506,-82.413996",
+                    :destination=> "35.8536,-82.2401" }
+      time = MapQuestService.find_travel_time(coordinates)
+      expect(time).to eq({:formatted=>"01:36:38", :seconds=>5798})
     end
   end
 
-  it 'can get distance between more coordinates' do
-    VCR.use_cassette 'can get distance between more coordinates' do
-      coordinates =     { :start=> {:latitude=>39.738453, :longitude=>-104.984853},
-                    :destination=> {:latitude=>40.015831,   :longitude=>-105.27927} }
-      distance = MapQuestService.find_distance_between(coordinates)
-      expect(distance).to eq 31.045
+  it 'can get travel time between more coordinates' do
+    VCR.use_cassette 'travel time between more coordinates' do
+      coordinates =     { :start=> "39.738453,104.984853",
+                    :destination=> "40.015831, 105.27927" }
+      time = MapQuestService.find_travel_time(coordinates)
+      expect(time).to eq({:formatted=>"00:00:00", :seconds=>0})
     end
   end
 end

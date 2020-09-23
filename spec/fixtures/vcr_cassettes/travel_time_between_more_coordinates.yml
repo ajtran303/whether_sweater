@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: MAP_QUEST_URL/directions/v2/route?from=39.738453,104.984853&key=MAP_QUEST_KEY&to=40.015831,%20105.27927
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Sep 2020 08:50:43 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2180'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=BB188D995F62740FCEAA1EB2D86AD359; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Wed, 23 Sep 2020 08:50:43 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyb3V0ZSI6eyJoYXNUb2xsUm9hZCI6ZmFsc2UsImhhc0JyaWRnZSI6ZmFsc2UsImRpc3RhbmNlIjowLCJoYXNUaW1lZFJlc3RyaWN0aW9uIjpmYWxzZSwiaGFzVHVubmVsIjpmYWxzZSwiaGFzSGlnaHdheSI6ZmFsc2UsImNvbXB1dGVkV2F5cG9pbnRzIjpbXSwicm91dGVFcnJvciI6eyJlcnJvckNvZGUiOjIwMSwibWVzc2FnZSI6IiJ9LCJmb3JtYXR0ZWRUaW1lIjoiMDA6MDA6MDAiLCJzZXNzaW9uSWQiOiIiLCJoYXNBY2Nlc3NSZXN0cmljdGlvbiI6ZmFsc2UsInJlYWxUaW1lIjotMSwiaGFzU2Vhc29uYWxDbG9zdXJlIjpmYWxzZSwiaGFzQ291bnRyeUNyb3NzIjpmYWxzZSwiZnVlbFVzZWQiOjAsImxlZ3MiOltdLCJvcHRpb25zIjp7ImFydGVyeVdlaWdodHMiOltdLCJjeWNsaW5nUm9hZEZhY3RvciI6MSwidGltZVR5cGUiOjAsInVzZVRyYWZmaWMiOmZhbHNlLCJyZXR1cm5MaW5rRGlyZWN0aW9ucyI6ZmFsc2UsImNvdW50cnlCb3VuZGFyeURpc3BsYXkiOnRydWUsImVuaGFuY2VkTmFycmF0aXZlIjpmYWxzZSwibG9jYWxlIjoiZW5fVVMiLCJ0cnlBdm9pZExpbmtJZHMiOltdLCJkcml2aW5nU3R5bGUiOjIsImRvUmV2ZXJzZUdlb2NvZGUiOnRydWUsImdlbmVyYWxpemUiOi0xLCJtdXN0QXZvaWRMaW5rSWRzIjpbXSwic2lkZU9mU3RyZWV0RGlzcGxheSI6dHJ1ZSwicm91dGVUeXBlIjoiRkFTVEVTVCIsImF2b2lkVGltZWRDb25kaXRpb25zIjpmYWxzZSwicm91dGVOdW1iZXIiOjAsInNoYXBlRm9ybWF0IjoicmF3IiwibWF4V2Fsa2luZ0Rpc3RhbmNlIjotMSwiZGVzdGluYXRpb25NYW5ldXZlckRpc3BsYXkiOnRydWUsInRyYW5zZmVyUGVuYWx0eSI6LTEsIm5hcnJhdGl2ZVR5cGUiOiJ0ZXh0Iiwid2Fsa2luZ1NwZWVkIjotMSwidXJiYW5Bdm9pZEZhY3RvciI6LTEsInN0YXRlQm91bmRhcnlEaXNwbGF5Ijp0cnVlLCJ1bml0IjoiTSIsImhpZ2h3YXlFZmZpY2llbmN5IjoyMiwibWF4TGlua0lkIjowLCJtYW5ldXZlclBlbmFsdHkiOi0xLCJhdm9pZFRyaXBJZHMiOltdLCJmaWx0ZXJab25lRmFjdG9yIjotMSwibWFubWFwcyI6InRydWUifSwibG9jYXRpb25zIjpbeyJkcmFnUG9pbnQiOmZhbHNlLCJkaXNwbGF5TGF0TG5nIjp7ImxuZyI6MTA0Ljk4NDg1MywibGF0IjozOS43Mzg0NTN9LCJhZG1pbkFyZWE0IjoiIiwiYWRtaW5BcmVhNSI6IiIsInBvc3RhbENvZGUiOiIiLCJhZG1pbkFyZWExIjoiQ04iLCJhZG1pbkFyZWEzIjoiIiwidHlwZSI6InMiLCJzaWRlT2ZTdHJlZXQiOiJOIiwiZ2VvY29kZVF1YWxpdHlDb2RlIjoiQTFYQVgiLCJhZG1pbkFyZWE0VHlwZSI6IkNvdW50eSIsImxpbmtJZCI6OTcxNzIxOTAsInN0cmVldCI6IiIsImFkbWluQXJlYTVUeXBlIjoiQ2l0eSIsImdlb2NvZGVRdWFsaXR5IjoiQ09VTlRSWSIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsImFkbWluQXJlYTNUeXBlIjoiU3RhdGUiLCJsYXRMbmciOnsibG5nIjoxMDQuOTg0ODUzLCJsYXQiOjM5LjczODQ1M319LHsiZHJhZ1BvaW50IjpmYWxzZSwiZGlzcGxheUxhdExuZyI6eyJsbmciOjEwNS4yNzkyNywibGF0Ijo0MC4wMTU4MzF9LCJhZG1pbkFyZWE0IjoiIiwiYWRtaW5BcmVhNSI6IiIsInBvc3RhbENvZGUiOiIiLCJhZG1pbkFyZWExIjoiQ04iLCJhZG1pbkFyZWEzIjoiIiwidHlwZSI6InMiLCJzaWRlT2ZTdHJlZXQiOiJOIiwiZ2VvY29kZVF1YWxpdHlDb2RlIjoiQTFYQVgiLCJhZG1pbkFyZWE0VHlwZSI6IkNvdW50eSIsImxpbmtJZCI6MCwic3RyZWV0IjoiIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiZ2VvY29kZVF1YWxpdHkiOiJDT1VOVFJZIiwiYWRtaW5BcmVhMVR5cGUiOiJDb3VudHJ5IiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImxhdExuZyI6eyJsbmciOjEwNS4yNzkyNywibGF0Ijo0MC4wMTU4MzF9fV0sInRpbWUiOjAsImhhc1VucGF2ZWQiOmZhbHNlLCJsb2NhdGlvblNlcXVlbmNlIjpbXSwiaGFzRmVycnkiOmZhbHNlfSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo2MDEsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIwIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIwIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIlVuYWJsZSB0byB1c2UgbG9jYXRpb24gIzEgOk11c3QgaGF2ZSBhIHZhbGlkIEdFRklELiJdfX0=
+  recorded_at: Wed, 23 Sep 2020 08:50:43 GMT
+recorded_with: VCR 6.0.0
