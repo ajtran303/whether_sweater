@@ -19,7 +19,7 @@ RSpec.describe 'User Registration Endpoint' do
     new_user = User.last
 
     expect(response.media_type).to eq('application/json')
-    expect(response.status).to eq(200)
+    expect(response.status).to eq(201)
     expect(response).to be_successful
 
     result = parse_body(response)
