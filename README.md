@@ -212,28 +212,6 @@ Example request:
 
 ```
      http method: POST
-        endpoint: http://localhost:3000/api/v1/users
-       JSON Body:
-                  {
-                    "email": "my@example.com",
-                    "password": "password"
-                  }
-```
-
-Example response:
-
-```
-{
-  "errors": [
-    "Password confirmation can't be blank"
-  ]
-}
-```
-
-Example request:
-
-```
-     http method: POST
 url and endpoint: http://localhost:3000/api/v1/users
        JSON Body:
                   {
