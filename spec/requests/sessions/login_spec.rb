@@ -13,7 +13,7 @@ RSpec.describe 'Log in Endpoint' do
       'ACCEPT' => 'application/json'
     }
 
-    post '/api/v1/endpoint', headers: headers, params: params.to_json
+    post '/api/v1/sessions', headers: headers, params: params.to_json
 
     expect(response.media_type).to eq('application/json')
     expect(response.status).to eq(200)
