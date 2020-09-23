@@ -13,7 +13,10 @@ RSpec.describe 'User Registration Endpoint' do
       'ACCEPT' => 'application/json'
     }
 
-    post '/api/v1/users', headers: headers, params: params.to_json
+    expect do
+      post '/api/v1/users', headers: headers, params: params.to_json
+    end.to change(User, :count).from(0).to(1)
+    new_user = User.last
 
     expect(response.media_type).to eq('application/json')
     expect(response.status).to eq(200)
@@ -27,12 +30,12 @@ RSpec.describe 'User Registration Endpoint' do
     top_level = [:type, :id, :attributes]
     expect(result[:data].keys).to match_array top_level
     expect(result[:data][:type]).to eq 'user'
-    expect(result[:data][:id]).to be_nil
+    expect(result[:data][:id]).to eq new_user.id
     expect(result[:data][:attributes]).to be_a Hash
 
     attributes = [:email, :api_key]
     expect(result[:data][:attributes].keys).to match_array attributes
-    expect(result[:data][:attributes][:email]).to be_a String
-    expect(result[:data][:attributes][:api_key]).to be_a String
+    expect(result[:data][:attributes][:email]).to eq new_user.email
+    expect(result[:data][:attributes][:api_key]).to eq new_user.api_key
   end
 end
