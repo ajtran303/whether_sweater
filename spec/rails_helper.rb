@@ -69,7 +69,12 @@ end
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
-  config.filter_sensitive_data('DONT_SHARE_MY_PROPUBLIC_SECRET_KEY') { ENV['PROPUBLICA_KEY'] }
+  config.filter_sensitive_data('MAP_QUEST_URL') { ENV['MAP_QUEST_URL'] }
+  config.filter_sensitive_data('MAP_QUEST_KEY') { ENV['MAP_QUEST_KEY'] }
+  config.filter_sensitive_data('OPEN_WEATHER_URL') { ENV['OPEN_WEATHER_URL'] }
+  config.filter_sensitive_data('OPEN_WEATHER_KEY') { ENV['OPEN_WEATHER_KEY'] }
+  config.filter_sensitive_data('PIXABAY_URL') { ENV['PIXABAY_URL'] }
+  config.filter_sensitive_data('PIXABAY_KEY') { ENV['PIXABAY_KEY'] }
   config.default_cassette_options = { re_record_interval: 7.days }
   config.configure_rspec_metadata!
 end
