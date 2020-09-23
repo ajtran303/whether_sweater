@@ -1,12 +1,15 @@
 # Whether, Sweater?
 A weather data API with geolocation and image search services.
 
-This API was created to serve data requested by a front-end team's wireframes.
+This Rails API was created to serve data requested by a front-end team's wireframes.
 
 This project is my final solo project for Module 3 Back End Engineering at the Turing School of Software and Design.
 
+It is the capstone project for the Module theme, Advanced Rails Applications. Read the [learning goals](https://backend.turing.io/module3/projects/sweater_weather/index) or view the [project requirements](https://backend.turing.io/module3/projects/sweater_weather/requirements)
+
 ## Features
 
+- Uses MapQuest, OpenWeatherMap, and Pixabay APIs
 - Complies with JSON 1.0 specification (with 'application/json' headers)
 - Authentication required for `road_trip` endpoint
 - Users can sign up for an API key to become authorized
@@ -26,12 +29,22 @@ Ruby 2.5.3p105
 git clone git@github.com:ajtran303/whether_sweater.git
 cd whether_sweater
 bundle install
-
-- Run the tests - 100% coverage
-
 bundle exec rake db:{create,migrate}
-bundle exec rspec
-open coverage/index.html
+
+- Configure environment variabes
+
+bundle exec figaro install
+
+- Edit config/application.yml
+
+MAP_QUEST_URL: http://www.mapquestapi.com
+MAP_QUEST_KEY: YOUR_MAP_QUEST_KEY
+
+OPEN_WEATHER_URL: https://api.openweathermap.org
+OPEN_WEATHER_KEY: YOUR_OPEN_WEATHER_KEY
+
+PIXABAY_URL: https://pixabay.com
+PIXABAY_KEY: YOUR_PIXABAY_KEY
 ```
 
 Start a local server with `rails s` and send requests to `localhost:3000` with an HTTP client such as Insomnia. Visit next section for example requests and responses.
