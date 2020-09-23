@@ -3,12 +3,11 @@ class MapQuestService < ConnectionService
     parse_body geocoding.call location_query
   end
 
-  def self.find_distance_between(coordinates)
-    start_param = "#{coordinates[:start][:latitude]},#{coordinates[:start][:longitude]}"
-    destination_param = "#{coordinates[:destination][:latitude]},#{coordinates[:destination][:longitude]}"
-    directions_params = { from: start_param, to: destination_param }
+  def self.find_travel_time(coordinates)
+    directions_params = { from: coordinates[:start], to: coordinates[:destination] }
     travel_route = parse_body directions.call directions_params
-    travel_route[:route][:distance]
+    { formatted: travel_route[:route][:formattedTime],
+      seconds: travel_route[:route][:time] }
   end
 
   private
