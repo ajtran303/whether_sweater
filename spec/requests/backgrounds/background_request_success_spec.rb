@@ -23,18 +23,14 @@ RSpec.describe 'Background Endpoint can respond to correct request type' do
       expect(background).to_not have_key :errors
       expect(background).to have_key :data
 
-      expect(background[:data]).to have_key :type
-      expect(background[:data]).to have_key :id
-      expect(background[:data]).to have_key :attributes
-      expect(background[:data].keys.size).to eq 3
-
+      top_level = [:type, :id, :attributes]
+      expect(background[:data].keys).to match_array top_level
       expect(background[:data][:type]).to eq 'image'
       expect(background[:data][:id]).to be_nil
       expect(background[:data][:attributes]).to be_a Hash
 
       attributes = [:keyword_search, :image_url, :credit]
       expect(background[:data][:attributes].keys).to match_array attributes
-
       expect(background[:data][:attributes][:keyword_search]).to be_a String
       expect(background[:data][:attributes][:image_url]).to be_a String
       expect(background[:data][:attributes][:credit]).to be_a Hash
