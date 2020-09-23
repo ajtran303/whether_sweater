@@ -11,8 +11,8 @@ It is the capstone project for the Module theme, Advanced Rails Applications. Re
 
 - Uses MapQuest, OpenWeatherMap, and Pixabay APIs
 - Complies with JSON 1.0 specification (with 'application/json' headers)
-- Authentication required for `road_trip` endpoint
 - Users can sign up for an API key to become authorized
+- Generates API key required for `road_trip` endpoint
 - Password digest securely encrypted with Bcrypt
 - 100% test coverage (257 Lines Of Coverage)
 
