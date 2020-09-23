@@ -1,7 +1,7 @@
 class UserFacade
   def self.build_facade user
     { data: {
-        type: 'user',
+        type: 'users',
         id: user.id,
         attributes: {
           email: user.email,
