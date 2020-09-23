@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Road Trip Endpoint' do
-  it 'is successful' do
+  it 'is successful', :vcr do
     api_key = create(:user).api_key
     params = {
       'origin' => 'Denver,CO',

@@ -1,0 +1,249 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: MAP_QUEST_URL/geocoding/v1/address?key=MAP_QUEST_KEY&location=denver,co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Sep 2020 09:50:16 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1734'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Wed, 23 Sep 2020 09:50:16 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=439B99D3661E7BA5CBE7A9C03A17A9C3; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2020 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2020 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"denver,co"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Denver","adminArea5Type":"City","adminArea4":"Denver
+        County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282041090","unknownInput":"","type":"s","latLng":{"lat":39.738453,"lng":-104.984853},"displayLatLng":{"lat":39.738453,"lng":-104.984853},"mapUrl":"MAP_QUEST_URL/staticmap/v5/map?key=MAP_QUEST_KEY&type=map&size=225,160&locations=39.738453,-104.984853|marker-sm-50318A-1&scalebar=true&zoom=12&rand=524423377"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"","adminArea5Type":"City","adminArea4":"Denver
+        County","adminArea4Type":"County","adminArea3":"CO","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A4XAX","geocodeQuality":"COUNTY","dragPoint":false,"sideOfStreet":"N","linkId":"282932003","unknownInput":"","type":"s","latLng":{"lat":39.738453,"lng":-104.984853},"displayLatLng":{"lat":39.738453,"lng":-104.984853},"mapUrl":"MAP_QUEST_URL/staticmap/v5/map?key=MAP_QUEST_KEY&type=map&size=225,160&locations=39.738453,-104.984853|marker-sm-50318A-2&scalebar=true&zoom=9&rand=-2115910396"}]}]}'
+  recorded_at: Wed, 23 Sep 2020 09:50:16 GMT
+- request:
+    method: get
+    uri: OPEN_WEATHER_URL/data/2.5/onecall?appid=OPEN_WEATHER_KEY&exclude=minutely&lat=39.738453&lon=-104.984853&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 23 Sep 2020 09:50:16 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '15514'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/onecall?exclude=minutely&lat=39.74&lon=-104.98&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":39.74,"lon":-104.98,"timezone":"America/Denver","timezone_offset":-21600,"current":{"dt":1600854616,"sunrise":1600865338,"sunset":1600908912,"temp":55.89,"feels_like":49.03,"pressure":1021,"humidity":47,"dew_point":35.98,"uvi":7.24,"clouds":1,"visibility":10000,"wind_speed":6.93,"wind_deg":240,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}]},"hourly":[{"dt":1600851600,"temp":55.89,"feels_like":50.22,"pressure":1021,"humidity":47,"dew_point":35.98,"clouds":1,"visibility":10000,"wind_speed":4.81,"wind_deg":212,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600855200,"temp":62.1,"feels_like":56.48,"pressure":1020,"humidity":39,"dew_point":36.88,"clouds":37,"visibility":10000,"wind_speed":5.01,"wind_deg":226,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"pop":0},{"dt":1600858800,"temp":65.46,"feels_like":59.32,"pressure":1019,"humidity":33,"dew_point":35.64,"clouds":55,"visibility":10000,"wind_speed":5.55,"wind_deg":212,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"pop":0},{"dt":1600862400,"temp":66.83,"feels_like":60.76,"pressure":1020,"humidity":31,"dew_point":35.26,"clouds":58,"visibility":10000,"wind_speed":5.32,"wind_deg":215,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"pop":0},{"dt":1600866000,"temp":66.81,"feels_like":60.53,"pressure":1020,"humidity":30,"dew_point":34.41,"clouds":26,"visibility":10000,"wind_speed":5.46,"wind_deg":216,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1600869600,"temp":68.4,"feels_like":62.69,"pressure":1020,"humidity":29,"dew_point":35.04,"clouds":62,"visibility":10000,"wind_speed":4.56,"wind_deg":225,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"pop":0},{"dt":1600873200,"temp":72.07,"feels_like":66.24,"pressure":1019,"humidity":25,"dew_point":35.26,"clouds":61,"visibility":10000,"wind_speed":4.63,"wind_deg":229,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"pop":0},{"dt":1600876800,"temp":76.32,"feels_like":70.43,"pressure":1018,"humidity":21,"dew_point":34.03,"clouds":46,"visibility":10000,"wind_speed":4.52,"wind_deg":264,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1600880400,"temp":79.43,"feels_like":73.08,"pressure":1017,"humidity":17,"dew_point":30.34,"clouds":37,"visibility":10000,"wind_speed":4.63,"wind_deg":307,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1600884000,"temp":81.61,"feels_like":75.16,"pressure":1016,"humidity":15,"dew_point":27.09,"clouds":30,"visibility":10000,"wind_speed":4.45,"wind_deg":0,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1600887600,"temp":82.87,"feels_like":76.37,"pressure":1016,"humidity":15,"dew_point":26.19,"clouds":0,"visibility":10000,"wind_speed":4.81,"wind_deg":46,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600891200,"temp":83.8,"feels_like":76.91,"pressure":1014,"humidity":14,"dew_point":25.75,"clouds":0,"visibility":10000,"wind_speed":5.28,"wind_deg":65,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600894800,"temp":84.47,"feels_like":77.83,"pressure":1013,"humidity":14,"dew_point":25.34,"clouds":0,"visibility":10000,"wind_speed":4.97,"wind_deg":56,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600898400,"temp":84.61,"feels_like":78.64,"pressure":1013,"humidity":14,"dew_point":26.22,"clouds":7,"visibility":10000,"wind_speed":3.8,"wind_deg":28,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600902000,"temp":84.18,"feels_like":76.89,"pressure":1013,"humidity":14,"dew_point":26.31,"clouds":13,"visibility":10000,"wind_speed":6.04,"wind_deg":51,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1600905600,"temp":83.26,"feels_like":76.33,"pressure":1014,"humidity":14,"dew_point":26.02,"clouds":13,"visibility":10000,"wind_speed":5.23,"wind_deg":38,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1600909200,"temp":80.76,"feels_like":74.82,"pressure":1016,"humidity":15,"dew_point":24.28,"clouds":16,"visibility":10000,"wind_speed":3.42,"wind_deg":336,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1600912800,"temp":79.45,"feels_like":70.77,"pressure":1017,"humidity":16,"dew_point":23.47,"clouds":10,"visibility":10000,"wind_speed":8.41,"wind_deg":308,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600916400,"temp":77.58,"feels_like":70.57,"pressure":1018,"humidity":17,"dew_point":22.62,"clouds":15,"visibility":10000,"wind_speed":5.41,"wind_deg":316,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1600920000,"temp":75.54,"feels_like":70.68,"pressure":1018,"humidity":18,"dew_point":22.23,"clouds":17,"visibility":10000,"wind_speed":1.57,"wind_deg":301,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1600923600,"temp":74.07,"feels_like":69.21,"pressure":1018,"humidity":19,"dew_point":22.59,"clouds":18,"visibility":10000,"wind_speed":1.59,"wind_deg":158,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1600927200,"temp":72.45,"feels_like":68.2,"pressure":1019,"humidity":20,"dew_point":23.18,"clouds":17,"visibility":10000,"wind_speed":0.47,"wind_deg":162,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1600930800,"temp":70.97,"feels_like":66.83,"pressure":1019,"humidity":21,"dew_point":23.4,"clouds":0,"visibility":10000,"wind_speed":0.27,"wind_deg":300,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600934400,"temp":70.05,"feels_like":64.87,"pressure":1019,"humidity":22,"dew_point":23.7,"clouds":0,"visibility":10000,"wind_speed":2.24,"wind_deg":211,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600938000,"temp":69.31,"feels_like":62.35,"pressure":1018,"humidity":23,"dew_point":24.24,"clouds":0,"visibility":10000,"wind_speed":5.5,"wind_deg":206,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600941600,"temp":68.18,"feels_like":60.48,"pressure":1018,"humidity":24,"dew_point":24.84,"clouds":0,"visibility":10000,"wind_speed":6.82,"wind_deg":208,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600945200,"temp":67.51,"feels_like":59.45,"pressure":1018,"humidity":24,"dew_point":25.05,"clouds":0,"visibility":10000,"wind_speed":7.34,"wind_deg":207,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600948800,"temp":66.85,"feels_like":58.84,"pressure":1018,"humidity":25,"dew_point":25.25,"clouds":0,"visibility":10000,"wind_speed":7.34,"wind_deg":202,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600952400,"temp":66.33,"feels_like":58.33,"pressure":1019,"humidity":25,"dew_point":25.61,"clouds":0,"visibility":10000,"wind_speed":7.2,"wind_deg":204,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600956000,"temp":67.71,"feels_like":59.92,"pressure":1019,"humidity":24,"dew_point":25.97,"clouds":0,"visibility":10000,"wind_speed":6.91,"wind_deg":202,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600959600,"temp":71.19,"feels_like":63.54,"pressure":1017,"humidity":22,"dew_point":26.33,"clouds":0,"visibility":10000,"wind_speed":6.82,"wind_deg":204,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600963200,"temp":76.08,"feels_like":68.7,"pressure":1016,"humidity":18,"dew_point":26.6,"clouds":0,"visibility":10000,"wind_speed":6.13,"wind_deg":203,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600966800,"temp":80.22,"feels_like":73.04,"pressure":1014,"humidity":16,"dew_point":26.44,"clouds":7,"visibility":10000,"wind_speed":5.88,"wind_deg":188,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1600970400,"temp":83.23,"feels_like":76.23,"pressure":1013,"humidity":14,"dew_point":25.84,"clouds":22,"visibility":10000,"wind_speed":5.35,"wind_deg":167,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1600974000,"temp":85.8,"feels_like":78.69,"pressure":1013,"humidity":13,"dew_point":23.76,"clouds":51,"visibility":10000,"wind_speed":5.59,"wind_deg":138,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"pop":0},{"dt":1600977600,"temp":87.37,"feels_like":79.72,"pressure":1011,"humidity":12,"dew_point":22.51,"clouds":28,"visibility":10000,"wind_speed":6.38,"wind_deg":118,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1600981200,"temp":87.98,"feels_like":80.29,"pressure":1010,"humidity":12,"dew_point":22.46,"clouds":20,"visibility":10000,"wind_speed":6.55,"wind_deg":121,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1600984800,"temp":88.3,"feels_like":80.42,"pressure":1009,"humidity":12,"dew_point":22.66,"clouds":16,"visibility":10000,"wind_speed":6.98,"wind_deg":125,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1600988400,"temp":87.94,"feels_like":79.29,"pressure":1009,"humidity":12,"dew_point":23.77,"clouds":13,"visibility":10000,"wind_speed":8.28,"wind_deg":137,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1600992000,"temp":86.04,"feels_like":75.72,"pressure":1009,"humidity":13,"dew_point":27.84,"clouds":11,"visibility":10000,"wind_speed":11.34,"wind_deg":156,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1600995600,"temp":81.95,"feels_like":70.86,"pressure":1010,"humidity":16,"dew_point":30.65,"clouds":0,"visibility":10000,"wind_speed":13.18,"wind_deg":163,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1600999200,"temp":79.74,"feels_like":68.49,"pressure":1012,"humidity":17,"dew_point":28.58,"clouds":0,"visibility":10000,"wind_speed":13.38,"wind_deg":166,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1601002800,"temp":77.67,"feels_like":67.96,"pressure":1013,"humidity":18,"dew_point":29.61,"clouds":0,"visibility":10000,"wind_speed":10.56,"wind_deg":172,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1601006400,"temp":76.48,"feels_like":69.96,"pressure":1013,"humidity":19,"dew_point":30.42,"clouds":0,"visibility":10000,"wind_speed":5.01,"wind_deg":209,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1601010000,"temp":75.2,"feels_like":68.85,"pressure":1013,"humidity":20,"dew_point":29.68,"clouds":0,"visibility":10000,"wind_speed":4.79,"wind_deg":207,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1601013600,"temp":73.92,"feels_like":67.03,"pressure":1013,"humidity":20,"dew_point":28.72,"clouds":0,"visibility":10000,"wind_speed":5.46,"wind_deg":204,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1601017200,"temp":72.84,"feels_like":66.11,"pressure":1012,"humidity":21,"dew_point":27.32,"clouds":0,"visibility":10000,"wind_speed":5.26,"wind_deg":210,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1601020800,"temp":71.96,"feels_like":65.43,"pressure":1012,"humidity":21,"dew_point":26.65,"clouds":0,"visibility":10000,"wind_speed":4.72,"wind_deg":208,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0}],"daily":[{"dt":1600884000,"sunrise":1600865338,"sunset":1600908912,"temp":{"day":79.97,"min":55.89,"max":84.24,"night":77.58,"eve":83.26,"morn":61.59},"feels_like":{"day":73.78,"night":70.57,"eve":76.33,"morn":55.6},"pressure":1016,"humidity":17,"dew_point":31.39,"wind_speed":4.45,"wind_deg":0,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":28,"pop":0.32,"rain":0.18,"uvi":7.24},{"dt":1600970400,"sunrise":1600951795,"sunset":1600995212,"temp":{"day":83.23,"min":66.85,"max":87.98,"night":77.67,"eve":86.04,"morn":66.85},"feels_like":{"day":76.23,"night":67.96,"eve":75.72,"morn":58.84},"pressure":1013,"humidity":14,"dew_point":25.84,"wind_speed":5.35,"wind_deg":167,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":22,"pop":0,"uvi":6.85},{"dt":1601056800,"sunrise":1601038251,"sunset":1601081513,"temp":{"day":85.24,"min":69.04,"max":89.58,"night":81.41,"eve":87.85,"morn":69.04},"feels_like":{"day":78.4,"night":68.23,"eve":79.57,"morn":61.84},"pressure":1009,"humidity":13,"dew_point":26.46,"wind_speed":5.01,"wind_deg":151,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"clouds":44,"pop":0,"uvi":6.59},{"dt":1601143200,"sunrise":1601124707,"sunset":1601167814,"temp":{"day":80.4,"min":68.61,"max":85.96,"night":77.94,"eve":84.9,"morn":68.61},"feels_like":{"day":75,"night":70.84,"eve":77.49,"morn":62.91},"pressure":1012,"humidity":16,"dew_point":26.15,"wind_speed":2.77,"wind_deg":90,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":6.47},{"dt":1601229600,"sunrise":1601211164,"sunset":1601254115,"temp":{"day":77.18,"min":65.84,"max":82.26,"night":74.55,"eve":81.12,"morn":65.84},"feels_like":{"day":70.36,"night":68.07,"eve":73.27,"morn":59},"pressure":1018,"humidity":18,"dew_point":29.41,"wind_speed":5.37,"wind_deg":144,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":11,"pop":0,"uvi":6.39},{"dt":1601316000,"sunrise":1601297620,"sunset":1601340416,"temp":{"day":81.88,"min":63.99,"max":87.96,"night":63.99,"eve":84.52,"morn":66.27},"feels_like":{"day":74.77,"night":54.97,"eve":72.66,"morn":60.39},"pressure":1015,"humidity":16,"dew_point":30.31,"wind_speed":6.11,"wind_deg":288,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":6.18},{"dt":1601402400,"sunrise":1601384078,"sunset":1601426718,"temp":{"day":60.03,"min":52.12,"max":66.07,"night":58.01,"eve":65.73,"morn":52.12},"feels_like":{"day":53.37,"night":49.8,"eve":56.41,"morn":44.24},"pressure":1027,"humidity":32,"dew_point":25.07,"wind_speed":4.99,"wind_deg":89,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":13,"pop":0,"uvi":5.98},{"dt":1601488800,"sunrise":1601470535,"sunset":1601513020,"temp":{"day":62.17,"min":51.21,"max":67.87,"night":66.76,"eve":66.76,"morn":51.21},"feels_like":{"day":55.47,"night":57.99,"eve":57.99,"morn":44.6},"pressure":1025,"humidity":26,"dew_point":13.71,"wind_speed":4.32,"wind_deg":69,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":5.81}]}'
+  recorded_at: Wed, 23 Sep 2020 09:50:16 GMT
+- request:
+    method: get
+    uri: PIXABAY_URL/api/?image_type=photo&key=PIXABAY_KEY&q=Denver&safesearch=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Sep 2020 09:50:17 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd29f3c3d23c46013becd474349c31d861600854616; expires=Fri, 23-Oct-20
+        09:50:16 GMT; path=/; domain=.pixabay.com; HttpOnly; SameSite=Lax; Secure
+      - anonymous_user_id=c0665fc2-bf9e-439b-8b00-fae412d05821; Path=/
+      Vary:
+      - Accept, Accept-Language, Cookie
+      - Accept-Encoding
+      Cache-Control:
+      - max-age=86400
+      Access-Control-Max-Age:
+      - '86400'
+      X-Ratelimit-Remaining:
+      - '4958'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Reset:
+      - '0.004469897963871372'
+      Allow:
+      - OPTIONS, GET, POST
+      Content-Security-Policy:
+      - frame-ancestors none
+      X-Frame-Options:
+      - DENY
+      Content-Language:
+      - en
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset
+      Cf-Cache-Status:
+      - MISS
+      Cf-Request-Id:
+      - 055bf802820000c7d17a0e3200000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5d735c4a6d34c7d1-DEN
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":79,"totalHits":79,"hits":[{"id":5354477,"pageURL":"PIXABAY_URL/photos/city-cinema-vintage-valencia-5354477/","type":"photo","tags":"city,
+        cinema, vintage","previewURL":"https://cdn.pixabay.com/photo/2020/06/29/21/13/city-5354477_150.jpg","previewWidth":100,"previewHeight":150,"webformatURL":"PIXABAY_URL/get/53e3d0474e55ab14f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":427,"webformatHeight":640,"largeImageURL":"PIXABAY_URL/get/53e3d0474e55ab14f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":3297,"imageHeight":4946,"imageSize":4626920,"views":5470,"downloads":4379,"favorites":15,"likes":15,"comments":5,"user_id":17265152,"user":"AveCalvar","userImageURL":"https://cdn.pixabay.com/user/2020/06/29/21-10-30-636_250x250.jpg"},{"id":2617524,"pageURL":"PIXABAY_URL/photos/larimer-lodo-denver-colorado-2617524/","type":"photo","tags":"larimer,
+        lodo, denver","previewURL":"https://cdn.pixabay.com/photo/2017/08/10/03/04/larimer-2617524_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/54e6d4444f50a814f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"PIXABAY_URL/get/54e6d4444f50a814f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":2760,"imageHeight":1840,"imageSize":2357829,"views":10580,"downloads":4509,"favorites":52,"likes":43,"comments":3,"user_id":1139623,"user":"quinntheislander","userImageURL":"https://cdn.pixabay.com/user/2017/08/02/07-08-01-965_250x250.png"},{"id":2228783,"pageURL":"PIXABAY_URL/photos/denver-colorado-mountains-city-2228783/","type":"photo","tags":"denver,
+        colorado, mountains","previewURL":"https://cdn.pixabay.com/photo/2017/04/13/21/54/denver-2228783_150.jpg","previewWidth":150,"previewHeight":112,"webformatURL":"PIXABAY_URL/get/54e2d74b4d5aaf14f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":480,"largeImageURL":"PIXABAY_URL/get/54e2d74b4d5aaf14f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":1999,"imageHeight":1500,"imageSize":1090895,"views":11019,"downloads":5744,"favorites":35,"likes":28,"comments":1,"user_id":12019,"user":"12019","userImageURL":""},{"id":1676444,"pageURL":"PIXABAY_URL/photos/denver-colorado-city-1676444/","type":"photo","tags":"denver,
+        colorado, city","previewURL":"https://cdn.pixabay.com/photo/2016/09/17/16/26/denver-1676444_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/57e6d2454e56a814f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"PIXABAY_URL/get/57e6d2454e56a814f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":1999,"imageHeight":1333,"imageSize":1252945,"views":6757,"downloads":3271,"favorites":28,"likes":26,"comments":5,"user_id":12019,"user":"12019","userImageURL":""},{"id":2095215,"pageURL":"PIXABAY_URL/photos/lightning-strike-night-storm-bolt-2095215/","type":"photo","tags":"lightning,
+        strike, night","previewURL":"https://cdn.pixabay.com/photo/2017/02/24/14/25/lightning-2095215_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/54e0dc464853a914f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"PIXABAY_URL/get/54e0dc464853a914f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":2000,"imageHeight":1333,"imageSize":432272,"views":14988,"downloads":7352,"favorites":64,"likes":74,"comments":11,"user_id":272447,"user":"skeeze","userImageURL":"https://cdn.pixabay.com/user/2020/07/21/01-37-17-778_250x250.jpg"},{"id":767050,"pageURL":"PIXABAY_URL/photos/denver-skyline-city-cloudy-urban-767050/","type":"photo","tags":"denver,
+        skyline, city","previewURL":"https://cdn.pixabay.com/photo/2015/05/14/17/27/denver-767050_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/51e6d2434f52b10ff3d8992cc62034761038dfe74e50774975277ed0914cc2_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"PIXABAY_URL/get/51e6d2434f52b108f5d0846096293f7d1d3ad9e4514c704f752f73d1934bc45f_1280.jpg","imageWidth":5184,"imageHeight":3456,"imageSize":3462854,"views":7921,"downloads":3948,"favorites":28,"likes":20,"comments":1,"user_id":677396,"user":"snicky2290","userImageURL":"https://cdn.pixabay.com/user/2015/05/14/17-49-04-573_250x250.jpg"},{"id":91090,"pageURL":"PIXABAY_URL/photos/dolphin-fountain-water-statue-91090/","type":"photo","tags":"dolphin,
+        fountain, water","previewURL":"https://cdn.pixabay.com/photo/2013/03/07/03/20/dolphin-91090_150.jpg","previewWidth":150,"previewHeight":112,"webformatURL":"PIXABAY_URL/get/5fe1d54a4a4faa0df7c5d57ccf2b3f7b123edcf8525771497d2a7fd2964a_640.jpg","webformatWidth":640,"webformatHeight":480,"largeImageURL":"PIXABAY_URL/get/5fe1d54a4a4fad0bffd8992cc62034761038dfe74e50774975277ed0914cc2_1280.jpg","imageWidth":2048,"imageHeight":1536,"imageSize":931771,"views":6289,"downloads":1609,"favorites":14,"likes":21,"comments":1,"user_id":25259,"user":"simplyelke","userImageURL":"https://cdn.pixabay.com/user/2013/03/08/03-26-04-563_250x250.jpg"},{"id":980887,"pageURL":"PIXABAY_URL/photos/union-station-colorado-denver-train-980887/","type":"photo","tags":"union
+        station, colorado, denver","previewURL":"https://cdn.pixabay.com/photo/2015/10/10/15/23/union-station-980887_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/5fe8d54b4255b10ff3d8992cc62034761038dfe74e50774975277ed0914cc2_640.jpg","webformatWidth":640,"webformatHeight":425,"largeImageURL":"PIXABAY_URL/get/5fe8d54b4255b108f5d0846096293f7d1d3ad9e4514c704f752f73d1934bc45f_1280.jpg","imageWidth":6016,"imageHeight":4000,"imageSize":4847022,"views":3991,"downloads":2506,"favorites":24,"likes":9,"comments":1,"user_id":647706,"user":"jsteen81","userImageURL":"https://cdn.pixabay.com/user/2015/10/10/15-28-04-381_250x250.png"},{"id":1567052,"pageURL":"PIXABAY_URL/photos/denver-skyline-cityscape-night-sky-1567052/","type":"photo","tags":"denver,
+        skyline, cityscape","previewURL":"https://cdn.pixabay.com/photo/2016/08/03/15/55/denver-1567052_150.jpg","previewWidth":150,"previewHeight":80,"webformatURL":"PIXABAY_URL/get/57e5d3444a57ae14f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":342,"largeImageURL":"PIXABAY_URL/get/57e5d3444a57ae14f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":2200,"imageHeight":1178,"imageSize":950561,"views":6864,"downloads":3687,"favorites":17,"likes":17,"comments":1,"user_id":272447,"user":"skeeze","userImageURL":"https://cdn.pixabay.com/user/2020/07/21/01-37-17-778_250x250.jpg"},{"id":1676466,"pageURL":"PIXABAY_URL/photos/denver-colorado-city-1676466/","type":"photo","tags":"denver,
+        colorado, city","previewURL":"https://cdn.pixabay.com/photo/2016/09/17/16/32/denver-1676466_150.jpg","previewWidth":150,"previewHeight":134,"webformatURL":"PIXABAY_URL/get/57e6d2454e54aa14f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":572,"largeImageURL":"PIXABAY_URL/get/57e6d2454e54aa14f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":2200,"imageHeight":1967,"imageSize":2178153,"views":3840,"downloads":1682,"favorites":21,"likes":11,"comments":0,"user_id":12019,"user":"12019","userImageURL":""},{"id":2617495,"pageURL":"PIXABAY_URL/photos/larimer-street-road-denver-2617495/","type":"photo","tags":"larimer,
+        street, road","previewURL":"https://cdn.pixabay.com/photo/2017/08/10/02/58/larimer-2617495_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/54e6d4444e5ba914f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"PIXABAY_URL/get/54e6d4444e5ba914f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":2700,"imageHeight":1800,"imageSize":2398499,"views":4327,"downloads":2335,"favorites":17,"likes":14,"comments":0,"user_id":1139623,"user":"quinntheislander","userImageURL":"https://cdn.pixabay.com/user/2017/08/02/07-08-01-965_250x250.png"},{"id":2617836,"pageURL":"PIXABAY_URL/photos/woman-girl-young-adult-female-2617836/","type":"photo","tags":"woman,
+        girl, young","previewURL":"https://cdn.pixabay.com/photo/2017/08/10/03/44/woman-2617836_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/54e6d4444251aa14f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"PIXABAY_URL/get/54e6d4444251aa14f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":2923,"imageHeight":1949,"imageSize":1624570,"views":4332,"downloads":1864,"favorites":23,"likes":19,"comments":1,"user_id":1139623,"user":"quinntheislander","userImageURL":"https://cdn.pixabay.com/user/2017/08/02/07-08-01-965_250x250.png"},{"id":92714,"pageURL":"PIXABAY_URL/photos/denver-colorado-statue-monument-92714/","type":"photo","tags":"denver,
+        colorado, statue","previewURL":"https://cdn.pixabay.com/photo/2013/03/11/22/15/denver-92714_150.jpg","previewWidth":112,"previewHeight":150,"webformatURL":"PIXABAY_URL/get/5fe2d2424e4faa0df7c5d57ccf2b3f7b123edcf8525771497d2a7fd2964a_640.jpg","webformatWidth":480,"webformatHeight":640,"largeImageURL":"PIXABAY_URL/get/5fe2d2424e4fad0bffd8992cc62034761038dfe74e50774975277ed0914cc2_1280.jpg","imageWidth":3240,"imageHeight":4320,"imageSize":3361201,"views":3292,"downloads":832,"favorites":11,"likes":17,"comments":0,"user_id":12019,"user":"12019","userImageURL":""},{"id":869160,"pageURL":"PIXABAY_URL/photos/bmx-fullpipe-denver-bike-extreme-869160/","type":"photo","tags":"bmx,
+        fullpipe, denver","previewURL":"https://cdn.pixabay.com/photo/2015/07/31/14/42/bmx-869160_150.jpg","previewWidth":150,"previewHeight":91,"webformatURL":"PIXABAY_URL/get/5ee6dc424c52b10ff3d8992cc62034761038dfe74e50774975277ed0914cc2_640.jpg","webformatWidth":640,"webformatHeight":390,"largeImageURL":"PIXABAY_URL/get/5ee6dc424c52b108f5d0846096293f7d1d3ad9e4514c704f752f73d1934bc45f_1280.jpg","imageWidth":2000,"imageHeight":1220,"imageSize":299378,"views":7904,"downloads":3210,"favorites":43,"likes":33,"comments":2,"user_id":1129570,"user":"jklugiewicz","userImageURL":"https://cdn.pixabay.com/user/2015/07/31/14-41-19-691_250x250.jpg"},{"id":2230512,"pageURL":"PIXABAY_URL/photos/denver-colorado-city-urban-2230512/","type":"photo","tags":"denver,
+        colorado, city","previewURL":"https://cdn.pixabay.com/photo/2017/04/14/15/17/denver-2230512_150.jpg","previewWidth":150,"previewHeight":95,"webformatURL":"PIXABAY_URL/get/54e2d6434f53ae14f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":407,"largeImageURL":"PIXABAY_URL/get/54e2d6434f53ae14f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":1999,"imageHeight":1274,"imageSize":1048394,"views":6300,"downloads":3148,"favorites":14,"likes":11,"comments":2,"user_id":12019,"user":"12019","userImageURL":""},{"id":790472,"pageURL":"PIXABAY_URL/photos/denver-colorado-city-downtown-790472/","type":"photo","tags":"denver,
+        colorado, city","previewURL":"https://cdn.pixabay.com/photo/2015/05/30/17/19/denver-790472_150.jpg","previewWidth":150,"previewHeight":87,"webformatURL":"PIXABAY_URL/get/51e9d5474d50b10ff3d8992cc62034761038dfe74e50774975277ed0914cc2_640.jpg","webformatWidth":640,"webformatHeight":375,"largeImageURL":"PIXABAY_URL/get/51e9d5474d50b108f5d0846096293f7d1d3ad9e4514c704f752f73d1934bc45f_1280.jpg","imageWidth":4755,"imageHeight":2792,"imageSize":4143401,"views":6954,"downloads":3143,"favorites":13,"likes":9,"comments":0,"user_id":568714,"user":"mrminibike","userImageURL":""},{"id":3737431,"pageURL":"PIXABAY_URL/photos/denver-skyline-colorado-downtown-3737431/","type":"photo","tags":"denver,
+        skyline, colorado","previewURL":"https://cdn.pixabay.com/photo/2018/10/10/14/31/denver-3737431_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/55e7d6444e51ad14f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"PIXABAY_URL/get/55e7d6444e51ad14f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":3789,"imageHeight":2527,"imageSize":2364422,"views":2711,"downloads":1760,"favorites":6,"likes":6,"comments":0,"user_id":9971789,"user":"chachpond","userImageURL":""},{"id":4046946,"pageURL":"PIXABAY_URL/photos/coors-field-baseball-stadium-4046946/","type":"photo","tags":"coors
+        field, baseball stadium, colorado rockies","previewURL":"https://cdn.pixabay.com/photo/2019/03/10/18/49/coors-field-4046946_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"PIXABAY_URL/get/52e0d1454356aa14f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"PIXABAY_URL/get/52e0d1454356aa14f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":4000,"imageHeight":2667,"imageSize":4175073,"views":2179,"downloads":1298,"favorites":7,"likes":7,"comments":2,"user_id":1778011,"user":"1778011","userImageURL":""},{"id":381310,"pageURL":"PIXABAY_URL/photos/denver-municipal-office-denver-381310/","type":"photo","tags":"denver,
+        municipal office denver, town hall","previewURL":"https://cdn.pixabay.com/photo/2014/07/01/15/10/denver-381310_150.jpg","previewWidth":150,"previewHeight":112,"webformatURL":"PIXABAY_URL/get/55e8d4404b52b10ff3d8992cc62034761038dfe74e50774975277ed0914cc2_640.jpg","webformatWidth":640,"webformatHeight":480,"largeImageURL":"PIXABAY_URL/get/55e8d4404b52b108f5d0846096293f7d1d3ad9e4514c704f752f73d1934bc45f_1280.jpg","imageWidth":2848,"imageHeight":2136,"imageSize":1689190,"views":3130,"downloads":1560,"favorites":10,"likes":10,"comments":1,"user_id":259067,"user":"Blok","userImageURL":""},{"id":1676475,"pageURL":"PIXABAY_URL/photos/denver-colorado-cheesman-park-1676475/","type":"photo","tags":"denver,
+        colorado, cheesman park","previewURL":"https://cdn.pixabay.com/photo/2016/09/17/16/36/denver-1676475_150.jpg","previewWidth":150,"previewHeight":82,"webformatURL":"PIXABAY_URL/get/57e6d2454e55a914f1dc846096293f7d1d3ad9e4514c704f752f73d1934bc45f_640.jpg","webformatWidth":640,"webformatHeight":352,"largeImageURL":"PIXABAY_URL/get/57e6d2454e55a914f6da8c7dda7936761637dbe252536c48732f7bdc9249c359bf_1280.jpg","imageWidth":2199,"imageHeight":1210,"imageSize":1302176,"views":2764,"downloads":1347,"favorites":10,"likes":11,"comments":0,"user_id":12019,"user":"12019","userImageURL":""}]}'
+  recorded_at: Wed, 23 Sep 2020 09:50:17 GMT
+recorded_with: VCR 6.0.0

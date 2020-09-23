@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Background Endpoint can respond to correct request type' do
-  it 'responds to application/json with a success' do
+  it 'works', :vcr do
     params = {
       'location' => 'denver,co'
     }
