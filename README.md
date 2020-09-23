@@ -101,36 +101,9 @@ Example response:
             "condition": "Clouds",
             "temperature": 64.74
           },
-          {
-            "hour": "7 AM",
-            "condition": "Clouds",
-            "temperature": 66.11
-          },
-          {
-            "hour": "8 AM",
-            "condition": "Clouds",
-            "temperature": 68.29
-          },
-          {
-            "hour": "9 AM",
-            "condition": "Clouds",
-            "temperature": 72.07
-          },
-          {
-            "hour": "10 AM",
-            "condition": "Clouds",
-            "temperature": 76.32
-          },
-          {
-            "hour": "11 AM",
-            "condition": "Clouds",
-            "temperature": 79.43
-          },
-          {
-            "hour": "12 PM",
-            "condition": "Clouds",
-            "temperature": 81.61
-          }
+
+          ...
+
         ],
         "five_day": [
           {
@@ -147,27 +120,9 @@ Example response:
             "high": 89.58,
             "low": 89.58
           },
-          {
-            "day_of_week": "Saturday",
-            "condition": "Clouds",
-            "precipitation": "0 mm",
-            "high": 85.96,
-            "low": 85.96
-          },
-          {
-            "day_of_week": "Sunday",
-            "condition": "Clouds",
-            "precipitation": "0 mm",
-            "high": 82.26,
-            "low": 82.26
-          },
-          {
-            "day_of_week": "Monday",
-            "condition": "Clear",
-            "precipitation": "0 mm",
-            "high": 87.96,
-            "low": 87.96
-          }
+
+          ...
+
         ]
       }
     }
