@@ -36,13 +36,19 @@ RSpec.describe 'Road Trip Endpoint' do
     expect(attributes.keys).to match_array attribute_keys
     expect(attributes[:origin]).to be_a String
     expect(attributes[:destination]).to be_a String
-    expect(attributes[:travel_time]).to be_a Numeric
-    expect(attributes[:arrival_forecast]).to be_a Hash
+    expect(attributes[:travel_time]).to be_a Hash
 
+    travel_time = attributes[:travel_time]
+    travel_time_keys = [:formatted, :seconds]
+    expect(travel_time.keys).to match_array travel_time_keys
+    expect(travel_time[:formatted]).to be_a String
+    expect(travel_time[:seconds]).to be_a Numeric
+
+    expect(attributes[:arrival_forecast]).to be_a Hash
     arrival_forecast = attributes[:arrival_forecast]
     arrival_forecast_keys = [:temperature, :condition]
     expect(arrival_forecast).to match_array arrival_forecast
-    expect(arrival_forecast[:temperature]).to be_a Numeric
+    expect(arrival_forecast[:temperature]).to be_a String
     expect(arrival_forecast[:condition]).to be_a String
   end
 end
