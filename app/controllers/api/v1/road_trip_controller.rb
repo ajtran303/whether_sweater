@@ -1,5 +1,4 @@
-class Api::V1::RoadTripController < ApplicationController
+class Api::V1::RoadTripController < Api::V1::AuthorizeController
   def create
-    binding.pry
   end
 end
