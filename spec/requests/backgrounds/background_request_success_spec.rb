@@ -41,6 +41,9 @@ RSpec.describe 'Background Endpoint can respond to correct request type' do
 
       credits = [:source, :author, :logo]
       expect(background[:data][:attributes][:credit].keys).to match_array credits
+      expect(background[:data][:attributes][:credit][:source]).to be_a String
+      expect(background[:data][:attributes][:credit][:author]).to be_a String
+      expect(background[:data][:attributes][:credit][:logo]).to be_a String
     end
   end
 end
