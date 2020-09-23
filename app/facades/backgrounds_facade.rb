@@ -1,4 +1,24 @@
 class BackgroundsFacade
+  def self.build_facade params
+    background = new location: params[:location]
+    {
+      data: {
+        type: 'image',
+        id: nil,
+        attributes: {
+          keyword_search: background.keyword_search,
+          image_url: background.image_url,
+          credit: {
+            source: background.source,
+            author: background.author,
+            logo: background.logo
+          }
+        }
+      }
+    }
+  end
+
+
   def initialize params
     @location = params[:location]
   end
