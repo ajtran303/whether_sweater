@@ -10,8 +10,8 @@ RSpec.describe UserFacade do
 
     top_level = [:type, :id, :attributes]
     expect(result[:data].keys).to match_array top_level
-    expect(result[:data][:type]).to eq 'resource'
-    expect(result[:data][:id]).to be_nil
+    expect(result[:data][:type]).to eq 'user'
+    expect(result[:data][:id]).to eq user.id
     expect(result[:data][:attributes]).to be_a Hash
 
     attributes = [:email, :api_key]
