@@ -14,7 +14,7 @@ RSpec.describe 'Road Trip Endpoint' do
       'ACCEPT' => 'application/json'
     }
 
-    get '/api/v1/road_trip', headers: headers, params: params
+    post '/api/v1/road_trip', headers: headers, params: params.to_json
 
     expect(response.media_type).to eq('application/json')
     expect(response.status).to eq(200)
