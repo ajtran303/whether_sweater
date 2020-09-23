@@ -7,6 +7,8 @@ class PixabayService < ConnectionService
     weather_photo[:hits][0]
   end
 
+  private
+  
   def self.search_pixabay
     proc do |query_param|
       conn.get '/api/' do |request|
@@ -16,8 +18,6 @@ class PixabayService < ConnectionService
       end
     end
   end
-
-  private
 
   def self.conn
     @conn ||= Faraday.new ENV['PIXABAY_URL'] do |f|
