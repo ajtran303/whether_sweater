@@ -83,3 +83,10 @@ end
 def parse_body(response)
   JSON.parse(response.body, symbolize_names: true)
 end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
