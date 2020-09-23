@@ -1,24 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe PixabayService do
-  it 'can find photograph', :vcr do
-    params = {location: 'denver', weather: 'sunny'}
-    photo = PixabayService.find_photograph params
-    expect(photo).to be_a Hash
+  let(:photo_keys) do
+    [
+      :id, :pageURL, :type, :tags, :previewURL, :previewWidth, :previewHeight,
+      :webformatURL, :webformatWidth, :webformatHeight, :largeImageURL,
+      :imageWidth, :imageHeight, :imageSize, :views, :downloads, :favorites,
+      :likes, :comments, :user_id, :user, :userImageURL
+    ]
+  end
+
+  it 'can find photograph by location' do
+    VCR.use_cassette 'location photograph' do
+      params = {location: 'denver', weather: 'sunny'}
+      photo = PixabayService.find_photograph params
+      expect(photo).to be_a Hash
+      expect(photo.keys).to match_array photo_keys
+    end
+  end
+
+  it 'finds a weather photograph when there are no location photos' do
+    VCR.use_cassette 'weather photograph' do
+      params = {location: 'gainesville', weather: 'sunny'}
+      photo = PixabayService.find_photograph params
+      expect(photo).to be_a Hash
+      expect(photo.keys).to match_array photo_keys
+    end
   end
 end
-# {
-#   "data": {
-#     "type": "image",
-#     "id": null,
-#     "image": {
-#       "location": "denver,co",
-#       "image_url": "https://pixabay.com/get/54e6d4444f50a814f1dc8460962930761c38d6ed534c704c7c2878dd954dc451_640.jpg",
-#       "credit": {
-#         "source": "pixabay.com",
-#         "author": "quinntheislander",
-#         "logo": "https://pixabay.com/static/img/logo_square.png"
-#       }
-#     }
-#   }
-# }
