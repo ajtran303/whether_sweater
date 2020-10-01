@@ -1,6 +1,10 @@
 language: ruby
 rvm:
 - 2.5.3
+services:
+  - postgresql
+before_script:
+  - psql -c 'CREATE DATABASE whether_sweater_test;' -U postgres
 env:
   global:
   - secure: FEUScLXGrSns/E0Oo+MiG/moPWxppT8igJGsF10NFvPuqOfxuXZwhxOqiKv4GJry8I+KrSc9fg6vHQ2Au7ooIaNdnE69vcJjTLId0Vv62Gr3IEamFafm7N3mih4jCZzKTsDBBLBDGuElCLkoD19vWvZNRnDPn0ZQRfxK/WjFYF98OLYuA+MHTImoD/3rjyGspHztmtFa3dprBQqIQRjp+5HHoPPP+EtTD/2oxjyuWebhK0zQwYvBUWDO6Ccl6W9CX8luuD2rnnxjdQqPtHgfm8cUwlzZx7lU9aNFOXpvyn4UVOir1eVIn+3djmShFx2fUabs1KShalPctjI30bvwY5VX/Fs2J/9unHYVNsBIwzMJ5MFFarNIuSEuWMWPUZGSXKGXdie5nve41IQLhyjFkpbHzpCvuU7oRZDCAVB7pTjaZCdEZldIDwZGX4bqezMVziN/KkYnzPLHw2HRhKu30FmblvsX+v/26WZ49U61NkF4x9vL4/4BasjcskklTSUAt+imxG6o1teEdS5J3y+3w7JMa7n3/tLeYQBROBBofOkOpv//wAmJsX6f4WHesMoW+VUpUoi9FEe2gujo+Wtu3njOmqwET5rzjgSJAbbJgo687YCrBBhHJMv+RrzGYgdAa02c+mnL+cc6ol2iF2Hs0uzjgLzifWkqxVnNGpfmXyM=
