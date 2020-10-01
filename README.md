@@ -1,4 +1,5 @@
-# Whether, Sweater?
+# Whether, Sweater? [![Build Status](https://travis-ci.org/ajtran303/whether_sweater.svg?branch=live)](https://travis-ci.org/ajtran303/whether_sweater)
+
 A weather data API with geolocation and image search services.
 
 This Rails API was created to serve data requested by a front-end team's wireframes.
